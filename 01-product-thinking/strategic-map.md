@@ -1,11 +1,7 @@
-# Strategic Discovery Map
-
-> **Module 1 · Lab 1.** Repo file `01-product-thinking/strategic-map.md` — part of your submission.
-> Do the lab in the **Module 1 · Exercise 1 Guide** (linked from the Module 1 deck), then click **⬇ Download .md** — it saves as this exact file. Commit it here.
-> It's the discovery groundwork behind your `problem-hook.md`.
+# Strategic Discovery Map (Module 1)
 
 ## Responses
-
-- **Feature with no strategic answer (why is this a 12-week priority?):** _(not filled in)_
-- **Feature that looks "correct" but has zero strategic weight:** _(not filled in)_
-- **V3 vs your Step 1 baseline — what changed, and was it your PM knowledge that forced usefulness?:** _(not filled in)_
+- **Write one feature from the map that, if an engineer asked “why is this a priority for our 12-week roadmap?”, you honestly could not give a strategic answer for.:** Smart water bottle integration. It depends on third-party hardware and partner APIs, benefits only the small share of users who own a connected bottle, and doesn’t improve the core logging habit that drives early retention. I couldn’t justify it over making manual logging and reminders excellent.
+- **Write one feature that looks “correct” for the app but has zero strategic weight, you have no idea if it helps the company make money or whether a single user actually asked for it.:** Streaks and badges. It looks correct because it’s grouped under Features and fits with motivation and low retention so the map makes it read like a solution to a real need and a real problem. Unlike quick-tap logging or reminders, it isn’t core to tracking water, it has no tie to revenue, and nothing on the map says it’s a better use of engineering’s time than reducing logging friction. It could work against overdrinking risk if people drink just to protect a streak.
+- **Compare V3 to your Step 1 baseline. What changed, and is the output objectively better, did the AI get smarter, or did your added PM knowledge (JTBD, effort/impact, retention) force it to be useful?:** For a discovery sprint, yes. A useful test is whether the output forces a decision. V1 doesn’t. You could hand it to five teams and get five different products. V3 does: it puts smart bottles and AI coaches in the “money pit” quadrant, says ads are off the table, and surfaces “graduation churn” as a risk that could undermine the subscription model. You can disagree with those calls, but you can’t ignore them. V1 gives a team nothing to push back on.
+- **Key takeaway: how does this prove the PM’s role is to think while the AI’s role is to execute?:** The AI didn’t get smarter. The same model produced both. What changed is the question, and PM context/understanding of the user's goals and necessary exercise gave a much better output.

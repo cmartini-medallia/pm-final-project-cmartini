@@ -1,53 +1,17 @@
-# Problem Hook & Value Proposition: [StreamLine / RouteLogic / your initiative]
+# Problem Hook & Value Proposition (Module 1)
 
-> **Module 1 · ★ Deliverable 1.** Repo file `01-product-thinking/problem-hook.md` — part of your submission.
-> Do the lab in the **Module 1 · Exercise 2 Guide** (linked from the Module 1 deck), then click **⬇ Download .md** — it saves as this exact file. Commit it here.
-> It becomes the **Problem, Value & Hypothesis** slide of your Module 6 final deck. (Your Module 1 · Exercise 1 discovery map lands in `strategic-map.md`.)
+## Responses
+- **Chosen path, which scenario are you committing to? (StreamLine or RouteLogic, or your own):** RouteLogic Velocity
+- **Strategic crisis, based on the brief, if the company does nothing for 12 months, what happens to its market position?:** If we do nothing for 12 months, the company will slide from being seen as the most powerful logistics operating system to being the bloated incumbent that leaner tools are built to replace. The early signals are already here: coordinator usage is falling sharply, and our largest enterprise account is trialing a competitor and calling us an administrative burden. Our working hypothesis is that this is a pattern, not one account’s issue. Frontline friction erodes usage first, then shows up in renewals and competitive losses, because the coordinator experience shapes buying decisions even when executives sign the contract. We still need to confirm this through win/loss and churn interviews, usage trends across other enterprise accounts, and competitive deal analysis. But we can’t wait for renewal data to prove it, because by the time it does, the customers will already be gone.
+- **Moment of misery, what is the user likely doing outside the product (Google, spreadsheets, a competitor) because your tool isn’t serving them?:** Assumption: user story based on customer feedback/discovery sessions.
 
-## 1. Chosen scenario
+The user is currently forced to, we believe, manage same-day disruptions outside RouteLogic. When a driver calls out or a truck breaks down, coordinators have minutes to reassign stops, but the product hides that task behind screens and required fields built for compliance and finance. Our hypothesis is that they reshuffle routes in spreadsheets or on whiteboards, estimate drive times in Google Maps, and coordinate drivers through group texts and phone calls, then enter everything into RouteLogic at the end of the shift.
 
-**Path:** _StreamLine Spotlight (B2C) · RouteLogic Velocity (B2B) · my own initiative_
+Discovery still to do: contextual inquiry with coordinators during live disruptions, a review of existing user research, task-time analysis for reassignment, and measuring the gap between when events happen and when they’re logged. If confirmed, this happens every shift, not occasionally, and the after-the-fact data entry also leaves executive reporting late and incomplete.
+- **Problem hook, summarize the business risk and user pain into one urgent sentence.:** We must stop RouteLogic’s slide from market leader to bloated incumbent by making same-day disruptions fast enough that coordinators stop running their shifts on spreadsheets and group texts.
+- **Value proposition, based on the proposed initiative (Spotlight or Velocity), what is the new value and why is it urgent to launch now?:** For frontline coordinators, we will make handling same-day disruptions in RouteLogic faster than their spreadsheet and group-text workarounds, while keeping enterprise capabilities in role-based views, because leaner competitors are setting the speed standard in live evaluations right now, and every shift spent in workarounds costs us usage, renewals, and the real-time data our buyers rely on.
 
-_One line on why you picked it._
-
-## 2. The strategic crisis
-
-_The big-picture business risk. If the company does nothing for 12 months, what happens to its market position?_
-
-> If we do nothing for 12 months, the company will…
-
-## 3. The moment of misery
-
-_The specific point where the product fails the user, forcing a manual workaround (Google, spreadsheets, group texts, a competitor)._
-
-> The user is currently forced to…
-
-## 4. Problem hook
-
-_One urgent sentence fusing the business risk and the user pain, your pitch for why this is the most important thing to work on right now._
-
-> We must solve [business risk] by addressing [user pain]…
-
-## 5. Value proposition
-
-_Who it's for, the new value, and why it's urgent to launch now._
-
-> For **[who]**, we will **[value]** because **[urgent why]**.
-
-## 6. Cold-read self-review
-
-_Read your hook back as a skeptical stakeholder. If you don't feel the urgency, that's your data._
-
-| Question | Your answer |
-|---|---|
-| Is the business risk high-stakes enough to justify a new initiative? | _____ |
-| Is the moment of misery systemic, or just an edge case? | _____ |
-| Does the value proposition actually remove the obstacle? | _____ |
-
-## 7. Finalized hypothesis _(complete in Module 3)_
-
-> Based on [qual + quant evidence], I believe that [solving X] for [persona] will result in [outcome], as measured by a [X%] change in [success metric]. I will protect [guardrail metric] and make a go/no-go decision after [decision window].
-
-## Link to full artifact
-
-_[link to your Problem Hook Builder export]_
+## Cold-read your own hook
+- **Is the business risk high enough to justify a new initiative, a high-stakes threat, or a minor inconvenience?:** High-stakes threat, as long as the pattern holds. The risk is not one lost account; it’s the market starting to see RouteLogic’s breadth as bloat, which turns our main differentiator into the reason we lose deals. Falling coordinator usage and a live competitor trial at our largest account are leading indicators that this is already happening. The weak point: the urgency depends on the account’s complaint being a pattern rather than an exception. Win/loss interviews and usage trends across other enterprise accounts need to confirm this early, or the case shrinks to an account-management problem.
+- **Is the moment of misery a systemic problem or just an edge case?:** Systemic based on the data we have so far  but the workaround pattern (spreadsheets, Google Maps, group texts, backfilling) is a hypothesis, not yet observed. Contextual inquiry and the gap between event time and entry time will show whether this is how most coordinators work or just a few frustrated power users.
+- **Does the value proposition actually remove the obstacle you identified, or is it a generic feature?:** It addresses the obstacle directly: the measure is “faster than the spreadsheet” for the exact task coordinators leave the product to do, and enterprise capabilities stay available in role-based views rather than being removed. The weak point: “coordinator-first experience” could still become a generic redesign if the scope isn’t tied to specific tasks. To keep it honest, Velocity should start with disruption handling and let the user research audit define the rest of the core, with reassignment time and backfill lag as the success metrics.
