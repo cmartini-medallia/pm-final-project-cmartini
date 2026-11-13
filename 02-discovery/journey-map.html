@@ -1,0 +1,147 @@
+<!-- RouteLogic Velocity future-state journey map -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RouteLogic Velocity: Future-State Dispatch Journey</title>
+<style>
+  :root {
+    color-scheme: light;
+    --ink: #000000;
+    --paper: #FFFFFF;
+    --road: #F2B705;
+    --asphalt: #2B2B2B;
+    --kerb: #D9D9D9;
+    --wash: #FFF6D6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink: #000000; --paper: #FFFFFF; }
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--paper); }
+  body {
+    margin: 0 auto;
+    max-width: 1180px;
+    padding: 40px 28px 56px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Inter", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  h1 { font-size: 30px; line-height: 1.2; font-weight: 700; margin: 0 0 20px; letter-spacing: -0.01em; }
+  h2 { font-size: 19px; font-weight: 700; margin: 0 0 12px; }
+  h3 { font-size: 16px; font-weight: 700; margin: 0 0 8px; }
+  p { margin: 0 0 8px; max-width: 75ch; }
+  section { margin-bottom: 40px; }
+
+  .persona { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; border-top: 2px solid var(--ink); padding-top: 14px; }
+  .persona dt { font-weight: 700; margin-bottom: 4px; }
+  .persona dd { margin: 0; }
+  .other-end { margin-top: 16px; padding: 12px 14px; background: var(--wash); max-width: none; }
+
+  /* the route: four stops on one road */
+  .route { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative; }
+  .route::before {
+    content: ""; position: absolute; left: 22px; right: 22px; top: 21px; height: 8px;
+    background: var(--asphalt);
+    background-image: linear-gradient(90deg, var(--road) 50%, transparent 50%);
+    background-size: 28px 2px; background-repeat: repeat-x; background-position: 0 3px;
+  }
+  .stop { position: relative; }
+  .marker {
+    width: 50px; height: 50px; border-radius: 50%; background: var(--road); border: 4px solid var(--asphalt);
+    display: grid; place-items: center; font-weight: 800; font-size: 18px; position: relative; z-index: 1; margin-bottom: 14px;
+  }
+  .stop h3 { font-size: 18px; }
+  .field { margin-bottom: 12px; }
+  .field b { display: block; font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+  .field p { margin: 0; }
+  .evidence { font-size: 13px; }
+  .replaces { border-top: 1px solid var(--kerb); padding-top: 10px; font-size: 14px; }
+  .replaces s { text-decoration-color: var(--road); text-decoration-thickness: 3px; }
+
+  .edges { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .edges li { border-left: 6px solid var(--road); padding-left: 14px; }
+  .notes { border-top: 2px solid var(--ink); padding-top: 14px; }
+  .notes ul { margin: 0; padding-left: 20px; }
+  .notes li { margin-bottom: 6px; max-width: 90ch; }
+
+  @media (max-width: 860px) {
+    .persona, .edges { grid-template-columns: 1fr; }
+    .route { grid-template-columns: 1fr; gap: 28px; padding-left: 70px; }
+    .route::before {
+      left: 21px; right: auto; top: 10px; bottom: 10px; width: 8px; height: auto;
+      background-image: linear-gradient(180deg, var(--road) 50%, transparent 50%);
+      background-size: 2px 28px; background-repeat: repeat-y; background-position: 3px 0;
+    }
+    .marker { position: absolute; left: -70px; top: 0; }
+  }
+</style>
+
+<h1>RouteLogic Velocity: Future-State Dispatch Journey</h1>
+
+<section>
+  <h2>Persona: the live-ops dispatcher</h2>
+  <dl class="persona">
+    <div><dt>Role</dt><dd>A dispatcher coordinating a regional fleet in real time, day or night shift, at a 3PL or enterprise account.</dd></div>
+    <div><dt>Goal</dt><dd>Absorb same-day disruptions and keep every driver on the right stop from one board she can trust.</dd></div>
+    <div><dt>Friction</dt><dd>Reassignments take 8 to 15 minutes to reach drivers with no alert, and the board shows finished stops as in progress for up to an hour, so a WhatsApp group runs live operations.</dd></div>
+  </dl>
+  <p class="other-end"><b>Other end of the journey:</b> the route driver, who receives the change and closes each stop. Evidence for this persona comes from UXR-02 and UXR-09 (dispatchers) plus the driver interviews that describe the handoff.</p>
+</section>
+
+<section>
+  <h2>Future state: a driver calls out mid-shift</h2>
+  <ol class="route">
+    <li class="stop">
+      <div class="marker" aria-hidden="true">1</div>
+      <h3>See the live picture</h3>
+      <div class="field"><b>User action</b><p>Opens dispatch view with live routes and exceptions only → spots the call-out immediately.</p></div>
+      <div class="field"><b>Internal state</b><p>Oriented. The board matches the road, so no WhatsApp check.</p></div>
+      <div class="field"><b>Pain point addressed</b><p>Board lags 20 to 60 minutes; core actions buried under unused features.</p><p class="evidence">BUG-2072, UXR-09, BUG-2079, UXR-04</p></div>
+      <p class="replaces">Replaces: <s>scrolling the WhatsApp group to learn what actually happened</s></p>
+    </li>
+    <li class="stop">
+      <div class="marker" aria-hidden="true">2</div>
+      <h3>Reassign in one move</h3>
+      <div class="field"><b>User action</b><p>Moves remaining stops to a nearby driver in one screen → decision made in seconds.</p></div>
+      <div class="field"><b>Internal state</b><p>In control. No compliance or finance screens between her and the decision.</p></div>
+      <div class="field"><b>Pain point addressed</b><p>Core actions sit two to three levels deep after feature additions.</p><p class="evidence">BUG-2079, UXR-04, UXR-11</p></div>
+      <p class="replaces">Replaces: <s>reassigning in RouteLogic, then repeating it by phone in case it never lands</s></p>
+    </li>
+    <li class="stop">
+      <div class="marker" aria-hidden="true">3</div>
+      <h3>Driver gets it now</h3>
+      <div class="field"><b>User action</b><p>Change pushes to driver with an alert; driver taps to accept → dispatcher sees confirmation.</p></div>
+      <div class="field"><b>Internal state</b><p>Relieved. She knows the driver has the new route, rather than hoping.</p></div>
+      <div class="field"><b>Pain point addressed</b><p>Reassignments take 8 to 15 minutes with no notification; drivers head the wrong way.</p><p class="evidence">BUG-2044 (Critical), UXR-02</p></div>
+      <p class="replaces">Replaces: <s>the WhatsApp group as the real dispatch system</s></p>
+    </li>
+    <li class="stop">
+      <div class="marker" aria-hidden="true">4</div>
+      <h3>Close the loop as it happens</h3>
+      <div class="field"><b>User action</b><p>Driver marks delivered in one tap, even offline → board and reports update without backfill.</p></div>
+      <div class="field"><b>Internal state</b><p>Finished. Nothing to reconcile at the end of the shift.</p></div>
+      <div class="field"><b>Pain point addressed</b><p>Three-screen delivery confirmation, blank offline routes, slow status sync.</p><p class="evidence">BUG-2055, UXR-01, BUG-2050, BUG-2072</p></div>
+      <p class="replaces">Replaces: <s>drivers texting completions for the dispatcher to log later</s></p>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2>Competitive advantages over the manual workaround</h2>
+  <ul class="edges">
+    <li><h3>One loop, not three channels</h3><p>The change, the driver's acknowledgment, and the stop status live in one place, replacing the WhatsApp group, phone calls, and texts.</p></li>
+    <li><h3>The route changes, not just the chat</h3><p>A group message still leaves the driver to rework their route by hand. Here the new stops land in the driver's app with confirmation the dispatcher can see.</p></li>
+    <li><h3>The record writes itself</h3><p>Events enter RouteLogic as they happen, so the reporting buyers paid for (UXR-10) is complete and on time instead of eroded by off-platform work.</p></li>
+  </ul>
+</section>
+
+<section class="notes">
+  <h2>Conditions and evidence gaps</h2>
+  <ul>
+    <li>The bar is WhatsApp speed. Stage 3 only beats the habit if sync is near-instant, so fixing BUG-2044, BUG-2031 (crash) and BUG-2050 (offline) is the entry ticket; simplifying screens alone will not move users off the group chat.</li>
+    <li>Dispatcher evidence is thin: two interviews (UXR-02, UXR-09). Contextual inquiry with dispatchers during live disruptions is the next research step.</li>
+    <li>End-of-shift backfill is inferred from drivers texting completions (UXR-01), not observed directly.</li>
+    <li>The Module 1 hypothesis of spreadsheets, whiteboards, and Google Maps did not appear in the research; the observed workarounds are WhatsApp, texts, calls, screenshots, and paper manifests.</li>
+  </ul>
+</section>
